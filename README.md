@@ -6,7 +6,7 @@
 
 ---
 
-- **Les fenêtres :**
+- **Windows  :**
   - Register
   - Login
   - Admin (monitoring)
@@ -14,7 +14,7 @@
 
 ---
 
-- **Fonctionnalités** :
+- **Features**:
   - Persist/Flush in DB (register/login)
   - Fetch (DB data)
   - User/Admin :
