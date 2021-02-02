@@ -2,7 +2,7 @@
 
 ## Monitoring Minecraft
 
-### Samuel Adone et Marie Dugoua
+### Samuel Adone & Marie Dugoua
 
 ---
 
