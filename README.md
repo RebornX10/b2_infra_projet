@@ -10,7 +10,7 @@
   - Register
   - Login
   - Admin (monitoring)
-  - User (gestion server, personnification)
+  - User (gestion server, personification)
 
 ---
 
