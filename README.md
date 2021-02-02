@@ -1,6 +1,6 @@
-# Projet Infra SI
+# Project Infra SI
 
-## Monitoring Minecraft
+## Minecraft Monitoring
 
 ### Samuel Adone & Marie Dugoua
 
