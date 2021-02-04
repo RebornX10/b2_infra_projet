@@ -1,0 +1,30 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+CONTROL_NODE_DISK1='./disk1.vdi'
+
+Vagrant.configure("1") do |config|
+  # Configuration commune à toutes les machines
+  config.vm.box = "minecraft_server"
+  
+
+   # Ajoutez cette ligne afin d'accélérer le démarrage de la VM (si une erreur 'vbguest' est levée, voir la note un peu plus bas)
+  config.vbguest.auto_update = false
+  # Désactive les updates auto qui peuvent ralentir le lancement de la machine
+  config.vm.box_check_update = false 
+  # La ligne suivante permet de désactiver le montage d'un dossier partagé (ne marche pas tout le temps directement suivant vos OS, versions d'OS, etc.)
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  # Config une première VM "node1"
+  config.vm.define "server0" do |node1|
+    node1.vm.network "private_network", ip: "192.168.1.30"
+    node1.vm.hostname = "node_mc_server"
+
+    node1.vm.provider "virtualbox" do |vb1|
+      vb1.memory = "2048"
+    end
+
+    node1.vm.provision "shell", path: "script_server.sh"
+  end
+end
