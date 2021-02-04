@@ -6,7 +6,7 @@
 
 ---
 
-- **Windows  :**
+- **Tabs  :**
   - Register
   - Login
   - Admin (monitoring)
@@ -28,3 +28,5 @@
     - Manage access
     - Manage Data
     - Manage connection
+  - *Specs* 
+    - RAM 2Gb 
