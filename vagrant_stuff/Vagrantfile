@@ -1,8 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+CONNTROL_DISK1='./disk1.vdi'
+
 Vagrant.configure("2")do|config|
-  config.vm.box="base.box"
+  config.vm.box="centos/7"
 
   ## Les 3 lignes suivantes permettent d'éviter certains bugs et/ou d'accélérer le déploiement. Gardez-les tout le temps sauf contre-indications.
   # Ajoutez cette ligne afin d'accélérer le démarrage de la VM (si une erreur 'vbguest' est levée, voir la note un peu plus bas)
@@ -25,6 +27,14 @@ Vagrant.configure("2")do|config|
     vb.name = "MC_Server"
     vb.cpus = 2
     # Crée le disque, uniquement s'il nexiste pas déjà
+    unless File.exist?(CONTROL_NODE_DISK1)
+      vb.customize ['createhd', '--filename', CONTROL_NODE_DISK1, '--variant', 'Fixed', '--size', 5 * 1024]
+    end
+    # Attache le disque à la VM
+    vb.customize ['storageattach', :id,  '--storagectl', 'IDE', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', CONTROL_DISK1]
+    
+
+  
   end
   # La ligne suivante permet de désactiver le montage d'un dossier partagé (ne marche pas tout le temps directement suivant vos OS, versions d'OS, etc.)
     config.vm.synced_folder ".", "/vagrant", disabled: true
