@@ -9,7 +9,7 @@ firewall-cmd --reload
 
 # install vim
 sudo yum install vim -y
-
+sudo yum install wget -y 
 # "server" user creation
 useradd server
 echo 'server' | passwd --stdin server
@@ -29,5 +29,5 @@ mv server.jar home/server/binary
 setenforce 0
 
 # changing ownership of the directories
-chown /home/server/ server:server
-chmod 510 /home/server/
+chown /home/server server:server
+chmod 510 /home/server
