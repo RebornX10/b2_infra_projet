@@ -23,11 +23,11 @@ usermod -d /home/server server
 # downloads the server's JAR
 wget https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar
 mkdir /home/server/binary
-mv server.jar home/server/binary
+mv server.jar /home/server/binary
 
 # disabling SELinux
 setenforce 0
 
 # changing ownership of the directories
-chown /home/server server:server
+chown server /home/server
 chmod 510 /home/server
