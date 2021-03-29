@@ -32,7 +32,7 @@
 
 ##### Installation
 
-1. **Vagrant**
+1. **Vagrant** :
 
    First you need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
@@ -49,14 +49,14 @@
    # ...
    ```
 
-2. **Apache server**
+2. **Apache server** :
 
    You'll need Apache Web Server:
 	- [Wamp](https://www.wampserver.com/) for windows 
 	- [Lamp](https://doc.ubuntu-fr.org/lamp) for Linux
 	- [Mamp](https://www.mamp.info/fr/mamp/mac/) for MacOs.
 
-3. **Source Code**
+3. **Source Code** :
 
    You'll have to download the source code from here [RebornX10](https://github.com/RebornX10/b2_infra_projet) 
    or Clone it with::
@@ -69,7 +69,7 @@
    ```
 
 
-##### Configuration
+##### Configuration :
 
 1. **Vagrant**
 
@@ -111,7 +111,7 @@
    ```
 
 
-##### How to launch the server and the websocket:
+##### How to launch the local server and the websocket :
 
    Open a new terminal, go to the your cloned directory:
 
@@ -125,4 +125,16 @@
    [vagrant@node0 ~]$ ./start
    ```
 
-   Congratulations now you have a working minecraft server ready to be managed through the Web Interface.
+   
+
+##### how to launch the web interface :
+
+Go to the following directory :
+
+```bash
+$ cd ./b2_infra_projet/monitoringKonsole/
+```
+
+Double click on "index.html", welcom in the GUI interface.
+
+Congratulations now you have a working minecraft server ready to be managed through the Web Interface.
