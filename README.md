@@ -96,7 +96,7 @@
    # look for "Ethernet" and copy the IP address and the name of the adapter
    ```
 
-   Open with vim, nano or whatever text editor you want the vagrantfile.
+   Open with vim, nano or whatever text editor you want, the vagrantfile.
 
    ```bash
    $ cd ./b2_infra_projet/vagrant_stuff/
@@ -104,7 +104,7 @@
    $ vim vagrantfile
    ```
 
-   Find the following line and change "bridge" and "ip" to yours (what we copied earlier):
+   look for the following line and change "wlan0" and "192.168.0.99" to yours (what we copied earlier):
 
    ```bash
    config.vm.network "public_network", bridge: "wlan0", ip: "192.168.0.99"
