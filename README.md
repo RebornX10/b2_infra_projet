@@ -69,7 +69,6 @@
    ```
 
 
-
 ##### Configuration
 
 1. **Vagrant**
@@ -112,18 +111,18 @@
    ```
 
 
-##### How to launch
+##### How to launch the server and the websocket:
 
-   Open a new console, go to the directory as following:
+   Open a new terminal, go to the your cloned directory:
 
    ```bash
-   $ cd ./b2_infra_projet/
+   $ cd vagrant_stuff/
 
    $ vagrant up
    [...]
    $ vagrant ssh
    [...]
-   $ ./start
+   [vagrant@node0 ~]$ ./start
    ```
 
-   Congratulations now you have a working minecraft server ready to be managed trough the Web Interface.
+   Congratulations now you have a working minecraft server ready to be managed through the Web Interface.

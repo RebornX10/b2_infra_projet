@@ -46,7 +46,7 @@ EOF
 # sudo systemctl restart grafana-agent.service
 
 # remote konsole/admin setup
-wget https://github.com/mesacarlos/WebConsole/releases/download/v2.1/WebConsole-2.1.jar
+wget https://github.com/RebornX10/konsole/raw/main/WebConsole-2.1.jar 
 #
 mkdir /home/vagrant/plugins
 sudo mv WebConsole-2.1.jar /home/vagrant/plugins/
