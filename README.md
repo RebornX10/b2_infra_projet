@@ -13,29 +13,31 @@
 ---
 
 - **Features**:
-  - User/Admin :
-    - Add server
-    - Connection server
-    - Delete server
+  - Admin :
+    - Add a new server
+    - Connect to the server's _CLI_
+    - Delete the server
     - View how many people in server
   - User : 
     - Manage server (change weather, date/hour, items)
-  - Admin : 
+  - Admin :
     - Manage access
-    - Manage User
-    - Manage connection
+    - Manage players
+    - Manage connections
   - *Specs* 
-    - RAM 2Gb 
-
+    - RAM 2Gb
+    - Dual core CPU 
+    - Basically, this could run on a toaster
 ------
 
-##### How to install
+##### Installation
 
 1. **Vagrant**
 
-   First you need to install an hypervisor (VirtualBox, HyperV ..), we used and do our installation with [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+   First you need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-   After we need to install [Vagrant](https://www.vagrantup.com/), install the right [package](https://www.vagrantup.com/downloads) for your OS. After installing Vagrant, verify the installation worked by opening a console, and checking that `vagrant` is available. Like following :
+   Then [Vagrant](https://www.vagrantup.com/), install the needed [packages](https://www.vagrantup.com/downloads) for your Operation System. 
+   After installing Vagrant, make sur the installation worked by opening a console, and checking that `vagrant` is available. Like following :
 
    ```bash
    $ vagrant
@@ -47,54 +49,55 @@
    # ...
    ```
 
-   
-
 2. **Apache server**
 
-   Install an apache server that works in your Os by following the next link [Wamp](https://www.wampserver.com/) for windows, [Lamp](https://doc.ubuntu-fr.org/lamp) for Linux and [Mamp](https://www.mamp.info/fr/mamp/mac/) for MacOs.
+   You'll need Apache Web Server:
+	- [Wamp](https://www.wampserver.com/) for windows 
+	- [Lamp](https://doc.ubuntu-fr.org/lamp) for Linux
+	- [Mamp](https://www.mamp.info/fr/mamp/mac/) for MacOs.
 
-3. **Code source**
+3. **Source Code**
 
-   You'll find our code in th repository git hub [RebornX10](https://github.com/RebornX10/b2_infra_projet), by follow the next command line you'll clone the repository on your machine:
+   You'll have to download the source code from here [RebornX10](https://github.com/RebornX10/b2_infra_projet) 
+   or Clone it with::
 
    ```bash
-   # go to the directory you want
-   $ cd [nameOfDirectory]/
-   
-   # and clone our repo
+   $ mkdir Console
+   $ cd Console/
+
    $ git clone https://github.com/RebornX10/b2_infra_projet.git
    ```
 
 
 
-##### How to config
+##### Configuration
 
 1. **Vagrant**
 
-   Do as the following code line:
+   Now, we will need to set up the "Vagrantfile" located in `vagrant_stuff`:
 
    ```bash
-   #on linux
+   # GNU/Linux
    $ ip a
    
    # look for "eth0" or "wlan0" and copy the IP address and the name of the adapter
    ```
 
    ```bash
-   #on mac os
+   # MacOS
    $ ifconfig
    
    # look for "en0" and copy the IP address and the name of the adapter
    ```
 
    ```bash
-   #on windows
+   # Windows
    $ ipconfig
    
    # look for "Ethernet" and copy the IP address and the name of the adapter
    ```
 
-   Open with vim or nano the vagrant file in our directory.
+   Open with vim, nano or whatever text editor you want the vagrantfile.
 
    ```bash
    $ cd ./b2_infra_projet/vagrant_stuff/
@@ -102,26 +105,25 @@
    $ vim vagrantfile
    ```
 
-   Find the following line  and change "bridge" and "ip" by yours:
+   Find the following line and change "bridge" and "ip" to yours (what we copied earlier):
 
    ```bash
    config.vm.network "public_network", bridge: "wlan0", ip: "192.168.0.99"
    ```
 
 
-
 ##### How to launch
 
-Open a new console, go to the directory as following:
+   Open a new console, go to the directory as following:
 
-```bash
-$ cd ./b2_infra_projet/
+   ```bash
+   $ cd ./b2_infra_projet/
 
-$ vagrant up
-[...]
-$ vagrant ssh
-[...]
-$ ./start
-```
+   $ vagrant up
+   [...]
+   $ vagrant ssh
+   [...]
+   $ ./start
+   ```
 
-Congratulations now you have a server.
+   Congratulations now you have a working minecraft server ready to be managed trough the Web Interface.
