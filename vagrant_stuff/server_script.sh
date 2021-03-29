@@ -41,9 +41,9 @@ eula=true
 EOF
 
 # Grafana installation
-# sudo ARCH=amd64 GCLOUD_STACK_ID="184246" GCLOUD_API_KEY="eyJrIjoiZTFhMzJhZDkwYmUwZTg5YTkwNTgwMjNhNjIwNGFlZmZhNjY3MjM0YSIsIm4iOiJiZHhnYW5nLWVhc3lzdGFydC1wcm9tLXB1Ymxpc2hlciIsImlkIjo0NzYzMzd9" /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/grafana/agent/release/production/grafanacloud-install.sh)"
+sudo ARCH=amd64 GCLOUD_STACK_ID="184246" GCLOUD_API_KEY="eyJrIjoiZTFhMzJhZDkwYmUwZTg5YTkwNTgwMjNhNjIwNGFlZmZhNjY3MjM0YSIsIm4iOiJiZHhnYW5nLWVhc3lzdGFydC1wcm9tLXB1Ymxpc2hlciIsImlkIjo0NzYzMzd9" /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/grafana/agent/release/production/grafanacloud-install.sh)"
 
-# sudo systemctl restart grafana-agent.service
+sudo systemctl restart grafana-agent.service
 
 # remote konsole/admin setup
 wget https://github.com/RebornX10/konsole/raw/main/WebConsole-2.1.jar 
