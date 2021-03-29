@@ -59,7 +59,7 @@
 
    ```bash
    # go to the directory you want
-   $ cd nameOfDirectory/
+   $ cd [nameOfDirectory]/
    
    # and clone our repo
    $ git clone https://github.com/RebornX10/b2_infra_projet.git
@@ -108,4 +108,20 @@
    config.vm.network "public_network", bridge: "wlan0", ip: "192.168.0.99"
    ```
 
-   
+
+
+##### How to launch
+
+Open a new console, go to the directory as following:
+
+```bash
+$ cd ./b2_infra_projet/
+
+$ vagrant up
+[...]
+$ vagrant ssh
+[...]
+$ ./start
+```
+
+Congratulations now you have a server.
