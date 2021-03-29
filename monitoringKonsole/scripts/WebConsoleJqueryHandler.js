@@ -1,7 +1,5 @@
 /**
  JS File containing all JQuery-related handlers
- https://github.com/mesacarlos
- 2019-2020 Carlos Mesa under MIT License.
 */
 
 /**
