@@ -47,29 +47,26 @@ sudo systemctl restart grafana-agent.service
 
 # remote konsole/admin setup
 wget https://github.com/mesacarlos/WebConsole/releases/download/v2.1/WebConsole-2.1.jar
-sudo mv WebConsole-2.1.jar /home/vagrant/plugins
-
-# now run the admin panel
-pub_ip=$(curl ifconfig.me)
-
-mkdir /home/vagrant/plugins/WebConsole
-cat > config.yml <<EOF
-useSSL: false
-StoreType: JKS
-KeyStore: plugins/WebConsole/keystore.jks
-StorePassword: storepassword
-KeyPassword: keypassword
-host: $(pub_ip)
-port: 8080
-language: en
-passwords:
-  admin:
-    user1: password
-  viewer: {}
-EOF
+#mkdir /home/vagrant/plugins
+#sudo mv WebConsole-2.1.jar /home/vagrant/plugins/
+#chown vagrant /home/vagrant/plugins
+##
+#mkdir /home/vagrant/plugins/WebConsole
+#cat > /home/vagrant/plugins/WebConsole/config.yml <<EOF
+#useSSL: false
+#StoreType: JKS
+#KeyStore: plugins/WebConsole/keystore.jks
+#StorePassword: storepassword
+#KeyPassword: keypassword
+#host: 0.0.0.0
+#port: 8080
+#language: en
+#passwords:
+#  admin:
+#    user1: password
+#  viewer: {}
+#EOF
 
 echo "SETUP COMPLETE"
 echo "   "
 echo "   "
-echo "The public ip is $(pub_ip)"
-
