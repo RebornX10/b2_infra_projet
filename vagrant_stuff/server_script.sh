@@ -41,33 +41,36 @@ eula=true
 EOF
 
 # Grafana installation
-sudo ARCH=amd64 GCLOUD_STACK_ID="184246" GCLOUD_API_KEY="eyJrIjoiZTFhMzJhZDkwYmUwZTg5YTkwNTgwMjNhNjIwNGFlZmZhNjY3MjM0YSIsIm4iOiJiZHhnYW5nLWVhc3lzdGFydC1wcm9tLXB1Ymxpc2hlciIsImlkIjo0NzYzMzd9" /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/grafana/agent/release/production/grafanacloud-install.sh)"
+# sudo ARCH=amd64 GCLOUD_STACK_ID="184246" GCLOUD_API_KEY="eyJrIjoiZTFhMzJhZDkwYmUwZTg5YTkwNTgwMjNhNjIwNGFlZmZhNjY3MjM0YSIsIm4iOiJiZHhnYW5nLWVhc3lzdGFydC1wcm9tLXB1Ymxpc2hlciIsImlkIjo0NzYzMzd9" /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/grafana/agent/release/production/grafanacloud-install.sh)"
 
-sudo systemctl restart grafana-agent.service
+# sudo systemctl restart grafana-agent.service
 
 # remote konsole/admin setup
 wget https://github.com/mesacarlos/WebConsole/releases/download/v2.1/WebConsole-2.1.jar
 #
-#mkdir /home/vagrant/plugins
-#sudo mv WebConsole-2.1.jar /home/vagrant/plugins/
-#chown vagrant /home/vagrant/plugins
+mkdir /home/vagrant/plugins
+sudo mv WebConsole-2.1.jar /home/vagrant/plugins/
+chown vagrant:vagrant /home/vagrant/plugins
 ##
-#mkdir /home/vagrant/plugins/WebConsole
-#cat > /home/vagrant/plugins/WebConsole/config.yml <<EOF
-#useSSL: false
-#StoreType: JKS
-#KeyStore: plugins/WebConsole/keystore.jks
-#StorePassword: storepassword
-#KeyPassword: keypassword
-#host: 0.0.0.0
-#port: 8080
-#language: en
-#passwords:
-#  admin:
-#    user1: password
-#  viewer: {}
-#EOF
+mkdir /home/vagrant/plugins/WebConsole
+cat > /home/vagrant/plugins/WebConsole/config.yml <<EOF
+useSSL: false
+StoreType: JKS
+KeyStore: plugins/WebConsole/keystore.jks
+StorePassword: storepassword
+KeyPassword: keypassword
+host: 0.0.0.0
+port: 8080
+language: en
+passwords:
+  admin:
+    user1: password
+  viewer: {}
+EOF
 
+# changing the ownership of the files in /home/vagrant
+sudo chown -R vagrant:vagrant /home/vagrant/
 echo "SETUP COMPLETE"
 echo "   "
 echo "   "
+echo "GOOD LUCK HAVE FUN"
